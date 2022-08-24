@@ -38,7 +38,7 @@ function App() {
 				)}
 
 				{/* Toggle button in tablet mode */}
-				<div className='hidden tablet:flex laptop:hidden justify-center fixed bottom-12 left-0 w-full'>
+				<div className='hidden tablet:flex laptop:hidden justify-center fixed bottom-12 left-0 w-full z-10'>
 					<button onClick={showList} className='flex items-center gap-x-2 text-xl bg-lime-900 text-white py-2.5 px-5 rounded-xl '>
 						<span>{toggleList ? 'Show Map' : 'Show Listings'}</span>
 						<svg

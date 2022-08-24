@@ -13,12 +13,11 @@ export default function ImageSlider({ images }) {
 			slidesPerView={1}
 			navigation
 			pagination={{ clickable: true }}
-			onSlideChange={() => console.log('slide change')}
-			onSwiper={(swiper) => console.log(swiper)}
+			loop={true}
 		>
 			{images.map((image, index) => (
 				<SwiperSlide className='bg-slate-400' key={'x' + index}>
-					<img className='w-full object-cover object-bottom' src={image} />
+					<img className='w-full h-full object-cover object-bottom' src={image} />
 				</SwiperSlide>
 			))}
 		</Swiper>

@@ -33,3 +33,25 @@
 	justify-content: center;
 	align-items: center;
 }
+.swiper-button-next:after,
+.swiper-button-prev:after {
+	color: white;
+	font-size: 22px;
+	font-weight: bold;
+}
+.swiper-button-prev,
+.swiper-rtl .swiper-button-next {
+	left: 5px;
+	right: auto;
+}
+.swiper-button-next,
+.swiper-rtl .swiper-button-prev {
+	right: 5px;
+	left: auto;
+}
+.swiper-pagination-bullet-active {
+	background-color: #fff;
+}
+.swiper-pagination-bullet {
+	background-color: #fff;
+}
