@@ -1,12 +1,12 @@
-import { MapContainer, TileLayer, Popup, Marker, Tooltip, Circle } from 'react-leaflet';
+import { MapContainer, TileLayer, Popup, Marker, Tooltip } from 'react-leaflet';
 import MarkerClusterGroup from '@changey/react-leaflet-markercluster';
 import { useSelector } from 'react-redux';
 import PopupCard from './PopupCard';
 export default function Map() {
-	const listings = useSelector((state) => state.listings);
+	const listings = useSelector((state) => state.listings.listings);
 
 	return (
-		<MapContainer className='w-full h-full' center={[46.3769, 8.5417]} zoom={7} scrollWheelZoom={false}>
+		<MapContainer className='w-full h-full' center={[46.3769, 8.5417]} zoom={8} scrollWheelZoom={false}>
 			<TileLayer
 				attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 				url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
@@ -24,14 +24,14 @@ export default function Map() {
 								opacity={1}
 								permanent
 							>
-								<div className='text-base font-semibold'>{listing.showing_price}</div>
+								<div className='text-base font-semibold'>{listing.marker_price}</div>
 								<Popup className='m-0'>
 									<PopupCard
-										images={listing.images}
-										location={listing.location.name}
+										gallery={listing.gallery}
+										location={listing.address}
 										currency={listing.currency}
-										price={listing.asking_price}
-										rooms={listing.room}
+										price={listing.price}
+										rooms={listing.rooms}
 										space={listing.space}
 									/>
 								</Popup>

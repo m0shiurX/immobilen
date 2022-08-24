@@ -1,9 +1,9 @@
 import ImageSlider from './ImageSlider';
-export default function PopupCard({ images, location, currency, price, space, rooms }) {
+export default function PopupCard({ gallery, location, currency, price, space, rooms }) {
 	return (
 		<div className='w-full border-0 h-full'>
 			<div className='h-40'>
-				<ImageSlider images={images} />
+				<ImageSlider gallery={gallery} />
 			</div>
 			<div className='p-3'>
 				<h4 className='text-lime-800 flex items-center gap-x-2 text-sm'>
@@ -18,9 +18,7 @@ export default function PopupCard({ images, location, currency, price, space, ro
 					</svg>
 					<span>{location}</span>
 				</h4>
-				<h4 className='m-1 font-semibold text-lime-800'>
-					{currency} {price}
-				</h4>
+				<h4 className='m-1 font-semibold text-lime-800'>{price === 'ASK' ? 'Auf Anfrage' : currency + price}</h4>
 				<div className='flex items-center justify-between text-gray-500 text-sm'>
 					<div className='flex items-center gap-x-2'>
 						{/* home icon */}
