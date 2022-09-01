@@ -1,7 +1,7 @@
 const formatListing = (payload) => {
 	return payload
 		.map((item) => {
-			let price = parseFloat(item.imobilienFelder.preis?.replace(/'/g, ''));
+			let price = parseFloat(item.imobilienFelder.preis); //?.replace(/'/g, '')
 			let marker_price = price && formatNumber(price);
 
 			if (!price) {
@@ -24,8 +24,8 @@ const formatListing = (payload) => {
 				space: item.imobilienFelder.grose,
 				address: item.imobilienFelder.addresse,
 				location: {
-					lat: item.imobilienFelder.adresse?.latitude,
-					long: item.imobilienFelder.adresse?.longitude,
+					lat: item.imobilienFelder.adresseOnMap?.latitude,
+					long: item.imobilienFelder.adresseOnMap?.longitude,
 				},
 			};
 		})

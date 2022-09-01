@@ -10,9 +10,10 @@ const query = gql`
 				title
 				imobilienFelder {
 					addresse
-					adresse {
-						latitude
+					adresseOnMap {
 						longitude
+						latitude
+						streetAddress
 					}
 					grose
 					immobilienTyp
@@ -30,7 +31,7 @@ const query = gql`
 `;
 
 const fetchListings = async (dispatch, getState) => {
-	const listings = await request('https://staging.immoanker.ch/graphql', query).then((response) => response);
+	const listings = await request('https://immoanker.ch/graphql', query).then((response) => response);
 	dispatch(loaded(listings));
 };
 
