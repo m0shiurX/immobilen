@@ -3,7 +3,7 @@ import { request, gql } from 'graphql-request';
 
 const query = gql`
 	query getProperties {
-		immobilien(first: 30) {
+		immobilien(first: 10) {
 			nodes {
 				id
 				link
